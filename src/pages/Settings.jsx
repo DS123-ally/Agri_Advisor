@@ -7,16 +7,30 @@ import React, { useState, useEffect } from 'react';
 import { recordManager } from '../utils/recordManager';
 import Card from '../components/Card';
 import Button from '../components/Button';
-import { TrashIcon, ArrowDownTrayIcon, ArrowUpTrayIcon } from '@heroicons/react/24/outline';
 
 const Settings = ({ isDarkMode, setIsDarkMode }) => {
   const [farmSettings, setFarmSettings] = useState({});
   const [statistics, setStatistics] = useState({});
+  const [language, setLanguage] = useState('en');
+  const [notifications, setNotifications] = useState(true);
+  const [autoSync, setAutoSync] = useState(true);
 
   useEffect(() => {
     // Load settings from recordManager
     const settings = recordManager.farmSettings.get();
     setFarmSettings(settings);
+    
+    // Load language preference
+    const lang = localStorage.getItem('language') || 'en';
+    setLanguage(lang);
+    
+    // Load notification preference
+    const notifPref = localStorage.getItem('notifications');
+    setNotifications(notifPref ? JSON.parse(notifPref) : true);
+    
+    // Load auto sync preference
+    const syncPref = localStorage.getItem('autoSync');
+    setAutoSync(syncPref ? JSON.parse(syncPref) : true);
     
     // Load statistics
     const stats = recordManager.getStatistics();
@@ -32,6 +46,22 @@ const Settings = ({ isDarkMode, setIsDarkMode }) => {
   const handleThemeToggle = () => {
     setIsDarkMode(!isDarkMode);
     recordManager.farmSettings.update({ theme: !isDarkMode ? 'dark' : 'light' });
+  };
+
+  const handleLanguageChange = (e) => {
+    const lang = e.target.value;
+    setLanguage(lang);
+    localStorage.setItem('language', lang);
+  };
+
+  const handleToggle = (key, value) => {
+    if (key === 'notifications') {
+      setNotifications(value);
+      localStorage.setItem('notifications', JSON.stringify(value));
+    } else if (key === 'autoSync') {
+      setAutoSync(value);
+      localStorage.setItem('autoSync', JSON.stringify(value));
+    }
   };
 
   const exportData = () => {
