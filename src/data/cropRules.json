@@ -1,0 +1,87 @@
+{
+  "crops": [
+    {
+      "id": 1,
+      "name": "Rice",
+      "soilTypes": ["clayey", "loamy"],
+      "locations": ["north", "central"],
+      "waterLevel": "high",
+      "season": "monsoon",
+      "description": "Best for high rainfall areas with clayey soil"
+    },
+    {
+      "id": 2,
+      "name": "Wheat",
+      "soilTypes": ["loamy", "sandy-loam"],
+      "locations": ["north", "central"],
+      "waterLevel": "medium",
+      "season": "winter",
+      "description": "Suitable for moderate water availability"
+    },
+    {
+      "id": 3,
+      "name": "Corn (Maize)",
+      "soilTypes": ["loamy", "sandy-loam"],
+      "locations": ["all"],
+      "waterLevel": "medium",
+      "season": "summer",
+      "description": "Versatile crop with moderate water needs"
+    },
+    {
+      "id": 4,
+      "name": "Cotton",
+      "soilTypes": ["sandy-loam", "loamy"],
+      "locations": ["south", "central"],
+      "waterLevel": "medium",
+      "season": "summer",
+      "description": "Drought-resistant crop for summer season"
+    },
+    {
+      "id": 5,
+      "name": "Sugarcane",
+      "soilTypes": ["clayey", "loamy"],
+      "locations": ["south", "central"],
+      "waterLevel": "high",
+      "season": "year-round",
+      "description": "High water requirement, long growing season"
+    },
+    {
+      "id": 6,
+      "name": "Pulses (Lentil)",
+      "soilTypes": ["loamy", "sandy-loam"],
+      "locations": ["north", "central"],
+      "waterLevel": "low",
+      "season": "winter",
+      "description": "Drought-resistant legume crop"
+    },
+    {
+      "id": 7,
+      "name": "Vegetables (Tomato)",
+      "soilTypes": ["loamy"],
+      "locations": ["all"],
+      "waterLevel": "medium",
+      "season": "summer",
+      "description": "High-value vegetable crop with moderate water"
+    },
+    {
+      "id": 8,
+      "name": "Groundnut",
+      "soilTypes": ["sandy-loam"],
+      "locations": ["south"],
+      "waterLevel": "low",
+      "season": "summer",
+      "description": "Drought-tolerant oilseed crop"
+    }
+  ],
+  "matchingRules": {
+    "soilType": {
+      "weight": 0.4
+    },
+    "location": {
+      "weight": 0.3
+    },
+    "waterLevel": {
+      "weight": 0.3
+    }
+  }
+}

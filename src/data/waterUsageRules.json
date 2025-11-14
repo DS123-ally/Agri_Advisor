@@ -1,0 +1,80 @@
+{
+  "crops": [
+    {
+      "name": "Rice",
+      "waterRequirement": 1200,
+      "unit": "mm",
+      "season": "monsoon",
+      "irrigationMethod": "Flood irrigation",
+      "efficiency": 0.45,
+      "description": "Requires high water, traditional flood irrigation"
+    },
+    {
+      "name": "Wheat",
+      "waterRequirement": 450,
+      "unit": "mm",
+      "season": "winter",
+      "irrigationMethod": "Sprinkler irrigation",
+      "efficiency": 0.75,
+      "description": "Moderate water, efficient with sprinkler system"
+    },
+    {
+      "name": "Corn (Maize)",
+      "waterRequirement": 500,
+      "unit": "mm",
+      "season": "summer",
+      "irrigationMethod": "Drip irrigation",
+      "efficiency": 0.90,
+      "description": "Best with drip irrigation for efficiency"
+    },
+    {
+      "name": "Cotton",
+      "waterRequirement": 600,
+      "unit": "mm",
+      "season": "summer",
+      "irrigationMethod": "Drip irrigation",
+      "efficiency": 0.85,
+      "description": "Drought-resistant, benefits from drip system"
+    },
+    {
+      "name": "Sugarcane",
+      "waterRequirement": 1500,
+      "unit": "mm",
+      "season": "year-round",
+      "irrigationMethod": "Flood irrigation",
+      "efficiency": 0.50,
+      "description": "Very high water requirement year-round"
+    },
+    {
+      "name": "Pulses (Lentil)",
+      "waterRequirement": 300,
+      "unit": "mm",
+      "season": "winter",
+      "irrigationMethod": "Rainfed",
+      "efficiency": 1.0,
+      "description": "Low water, often rainfed"
+    },
+    {
+      "name": "Vegetables (Tomato)",
+      "waterRequirement": 400,
+      "unit": "mm",
+      "season": "summer",
+      "irrigationMethod": "Drip irrigation",
+      "efficiency": 0.90,
+      "description": "High-value crop, requires efficient irrigation"
+    },
+    {
+      "name": "Groundnut",
+      "waterRequirement": 350,
+      "unit": "mm",
+      "season": "summer",
+      "irrigationMethod": "Rainfed or Sprinkler",
+      "efficiency": 0.70,
+      "description": "Drought-resistant oilseed"
+    }
+  ],
+  "formula": {
+    "description": "Water requirement (liters/hectare) = Crop water requirement (mm) × 10000 × Area (hectares) / Irrigation efficiency",
+    "example": "For Rice 1200mm on 1 hectare: 1200 × 10000 × 1 / 0.45 = 2,66,66,667 liters"
+  }
+}
